@@ -67,13 +67,15 @@ struct GoodPunchline: View {
             Text("Sincerely,")
                 .padding(10)
             Text("The internet provider.")
-        }.frame(width: 350, height: 350, alignment: .leading)
+        }.frame(width: 350)
         Spacer()
-        Image("pirate")
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-//            .frame(width: 250.0, height: 250.0)
-            .padding(50)
+        GeometryReader { geo in
+            Image("pirate")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: geo.size.width - 40)
+                .padding(20)
+        }
         Spacer()
     }
 }
@@ -84,6 +86,7 @@ struct Pun: View {
             VStack{
                 Spacer()
                 Text("Do you know why you never hear any puns about steak?")
+                    .padding(10)
                 Spacer()
                 HStack {
                     Spacer()
@@ -102,11 +105,13 @@ struct PunPunchline: View {
         Spacer()
         Text("Steak puns are a rare medium well done.")
         Spacer()
-        Image("steak")
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-//            .frame(width: 250.0, height: 250.0)
-            .padding(50)
+        GeometryReader { geo in
+            Image("steak")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: geo.size.width - 40)
+                .padding(20)
+        }
         Spacer()
     }
 }
@@ -117,6 +122,7 @@ struct Dad: View {
             VStack{
                 Spacer()
                 Text("A priest and a rabbit walk into a blood clinic.")
+                    .padding(10)
                 Spacer()
                 HStack {
                     Spacer()
@@ -134,13 +140,17 @@ struct DadPunchline: View {
     var body: some View {
         Spacer()
         Text("The priest says \"I think I'm a type-a.\"")
+            .padding(10)
         Text("The rabbit says \"I think I'm a typo.\"")
+            .padding(10)
         Spacer()
-        Image("rabbi")
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-//            .frame(width: 250.0, height: 250.0)
-            .padding(50)
+        GeometryReader { geo in
+            Image("rabbi")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: geo.size.width - 40)
+                .padding(20)
+        }
         Spacer()
     }
 }
@@ -219,11 +229,18 @@ struct KnockPunchline: View {
         Spacer()
         Text("Big summer blowout!")
         Spacer()
-        Image("blowout")
-            .resizable()
-            .aspectRatio(contentMode: .fit)
+//        Image("blowout")
+//            .resizable()
+//            .aspectRatio(contentMode: .fit)
 //            .frame(width: 250.0, height: 250.0)
-            .padding(50)
+//            .padding(20)
+        GeometryReader { geo in
+            Image("blowout")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: geo.size.width - 40)
+                .padding(20)
+        }
         Spacer()
     }
 }
