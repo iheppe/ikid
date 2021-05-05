@@ -11,6 +11,9 @@ struct ContentView: View {
     var body: some View {
         TabView {
             Text("Welcome to iKid!")
+                .tabItem {
+                    Text("Welcome")
+                }
             Good()
                 .tabItem {
                     Text("Good")
